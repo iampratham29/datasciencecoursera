@@ -30,4 +30,3 @@ unique_vals
 sapply(unique_vals,length)
 sapply(flags,unique)
 lapply(unique_vals, function(elem) elem[2])
-1
