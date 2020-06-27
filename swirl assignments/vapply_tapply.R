@@ -16,3 +16,4 @@ tapply(flags$animate,flags$landmass, mean)
 tapply(flags$population, flags$red, summary)
 tapply(flags$population,flags$landmass, summary)
 3
+
