@@ -34,15 +34,23 @@ nchar(linebyline[100])
 
 
 ##Qestion of .FOR type file
-
 download.file(url = 'https://d396qusza40orc.cloudfront.net/getdata%2Fwksst8110.for',destfile = './data/for.FOR',mode = 'wb')
 date()
-library(data.table)
-f=fread('data/for.FOR',sep = ' - ')
-?fread
-read.table(f)
-summary(f)
-required=sapply(f[,4], function(x){as.numeric(x)})
-sum(required,na.rm = TRUE)
-class(r)
-summary(r)
+
+
+#Failed attempt
+#library(data.table)
+#f=fread('data/for.FOR',sep = '-')
+#?fread
+#read.table(f)
+#summary(f)
+
+#required=sapply(f[,4], function(x){as.numeric(x)})
+#sum(required,na.rm = TRUE)
+#class(r)
+#summary(r)
+
+SST <- read.fwf('./data/for.FOR',skip=4, widths=c(12, 7, 4, 9, 4, 9, 4, 9, 4))
+head(SST)
+SST[,4]
+sum(SST[,4])
